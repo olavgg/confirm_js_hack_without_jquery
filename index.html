@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table>
+	<tbody>
+	<tr>
+		<td><input type="text"/></td>
+		<td><button id="save_button" onclick="confirm('er du sikker?');">save</button></td>
+	</tr>
+	</tbody>
+</table>
+<div id="confirm_dialog" style="display:none;">
+	<p>Are you sure?</p>
+	<ul>
+		<li><button id="ja">ja</button></li>
+		<li><button id="nei">nei</button></li>
+	</ul>
+</div>
+<style type="text/css">
+	ul{
+		list-style-type: none;
+	}
+	ul li{
+		float:left;
+	}
+</style>
+<script type="text/javascript">
+	var dialog = document.getElementById("confirm_dialog");
+	var save_button = document.getElementById("save_button");
+	var beforeSave = function(text){
+		dialog.style.cssText = "border:1px solid #000;display:block;position:fixed;left:-50%;margin-left:90%;width:200px;height:80px;top:50%;background:grey;";
+		var node = document.querySelector("#confirm_dialog p:nth-of-type(1)");
+		node.textContent = text;
+	};
+	var button_cancel = function(){
+		dialog.style.display = "none";
+	};
+	var button_ok = function(){
+		dialog.style.display = "none";
+	};
+	ja.onclick = button_ok;
+	nei.onclick = button_cancel;
+	confirm = beforeSave;
+</script>
+</body>
+</html>
