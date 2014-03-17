@@ -13,7 +13,7 @@
 	</tbody>
 </table>
 <div id="confirm_dialog" style="display:none;">
-	<p>Are you sure?</p>
+	<p style="text-align: center;">Are you sure?</p>
 	<ul>
 		<li><button id="ja">ja</button></li>
 		<li><button id="nei">nei</button></li>
@@ -24,14 +24,14 @@
 		list-style-type: none;
 	}
 	ul li{
-		float:left;
+		float:right;
 	}
 </style>
 <script type="text/javascript">
 	var dialog = document.getElementById("confirm_dialog");
 	var save_button = document.getElementById("save_button");
 	var beforeSave = function(text){
-		dialog.style.cssText = "border:1px solid #000;display:block;position:fixed;left:-50%;margin-left:90%;width:200px;height:80px;top:50%;background:grey;";
+		dialog.style.cssText = "border:1px solid #000;display:block;background:grey;position: fixed;top:50%;left:50%;width:200px;margin-left: -100px;height: 80px;margin-top: -40px;";
 		var node = document.querySelector("#confirm_dialog p:nth-of-type(1)");
 		node.textContent = text;
 	};
